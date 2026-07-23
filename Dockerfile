@@ -4,7 +4,7 @@ WORKDIR /app
 COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 COPY gemini_web2api/ ./gemini_web2api/
-COPY /etc/secrets/config.json ./config.json
+COPY config.example.json ./config.json
 EXPOSE 8081
 
 CMD ["python", "-m", "gemini_web2api", "--config", "/app/config.json"]
